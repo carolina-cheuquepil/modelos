@@ -7,7 +7,7 @@ import pickle
 import os
 
 # 1. Cargar archivo
-df = pd.read_csv("C:/Users/Carolina/Downloads/datos_limpios (1).csv")
+df = pd.read_csv("C:/Users/Carolina/Downloads/datos_limpios_con_derivadas.csv")
 
 # 2. Crear nuevas variables necesarias para el modelo
 df['Kills_por_minuto'] = df['RoundKills'] / (df['TimeAlive'] + 1)
