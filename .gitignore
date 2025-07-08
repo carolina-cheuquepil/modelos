@@ -1,20 +1,22 @@
-
+# Entorno virtual
 venv/
 
+# Python
 *.pyc
 __pycache__/
 
+# Pytest
 instance/
-
 .pytest_cache/
 .coverage
 htmlcov/
 
-
-
+# Distribución
 dist/
 build/
 *.egg-info/
 
-
+# Archivos ocultos o de sistema
 .DS_Store
+*.pkl
+*.env

@@ -1,7 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-   <body>
-        <h1>Resultado de la predicción:</h1>
-        <h3> {{ prediction }}</h3>
-   </body>
+  <head>
+    <title>Resultado de la predicción</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f2f7fb;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+      }
+
+      .resultado {
+          background-color: white;
+          padding: 30px;
+          border-radius: 15px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          width: 400px;
+      }
+
+      .resultado h2 {
+          margin-bottom: 20px;
+          color: #2c3e50;
+      }
+
+      .estado {
+          font-size: 22px;
+          margin-bottom: 15px;
+      }
+
+      .sobrevive {
+          color: green;
+      }
+
+      .no-sobrevive {
+          color: red;
+      }
+
+      .barra {
+          height: 25px;
+          width: 100%;
+          background-color: #eee;
+          border-radius: 10px;
+          overflow: hidden;
+          margin-bottom: 15px;
+      }
+
+      .progreso {
+          height: 100%;
+          background-color: #3498db;
+          width: {{ probabilidad }}%;
+          color: white;
+          text-align: center;
+          line-height: 25px;
+          border-radius: 10px;
+      }
+
+      a {
+          text-decoration: none;
+          color: #2980b9;
+          font-weight: bold;
+      }
+
+      a:hover {
+          text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resultado">
+      <h2>Resultado de la predicción:</h2>
+      <div
+        class="estado {% if resultado == '🟢 Sobrevive' %}sobrevive{% else %}no-sobrevive{% endif %}"
+      >
+        {{ resultado }}
+      </div>
+      <div class="barra">
+        <div class="progreso">{{ probabilidad }}%</div>
+      </div>
+      <a href="/">Volver al formulario</a>
+    </div>
+  </body>
 </html>
